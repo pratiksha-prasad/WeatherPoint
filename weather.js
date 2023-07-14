@@ -19,12 +19,12 @@ async function checkWeather(city){
         document.querySelector(".city").innerHTML = data.name;
         document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-        document.querySelector(".wind").innerHTML = data.wind.speed + " Km/h";
+        document.querySelector(".wind").innerHTML = data.wind.speed + " Km/h"; 
 
         const weather = data.weather[0].main;
+        document.body.style.backgroundImage = "url('./images/b_"+ weather +".jpg')"; 
         if(data.weather[0].main == weather ){
             weatherIcon.src = "./images/" + weather + ".png"; 
-            document.body.style.backgroundImage = "url('./images/b_' + weather + '.jpg')";  
         }
     
         document.querySelector(".weather").style.display = "block";
